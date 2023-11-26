@@ -312,3 +312,193 @@
 ## DIAGRAMA DE FLUJO
 
 <img width="378" alt="image" src="https://github.com/escuelaDeCodigoMargaritaMaza/Pensamiento_computacional/assets/91554777/82ecbf9a-d5fa-45ce-bede-eb7f276ec71d">
+
+# VERSION 7
+## SEUDOCODIGO
+
+
+	Algoritmo calcular_mult
+	  	Definir num1,num2,res,oper,atinadas Como Entero
+		
+		//METEMOS EL CICLO Para
+		Para i<-0 Hasta 9 Con Paso 1 Hacer
+			
+	
+			num1<-azar(99)+1
+			num2<-azar(9)+1
+			oper<-azar(3)+1
+			
+			Segun oper Hacer
+				1:
+					Escribir num1," + ",num2," = "
+					Leer res
+					Si res = num1 + num2 Entonces
+						Escribir "Correcto"
+						atinadas <- atinadas + 1
+					SiNo
+						Escribir "Incorrecto"
+					Fin Si
+				2:
+					Escribir num1," - ",num2," = "
+					Leer res
+					Si res = num1 - num2 Entonces
+						Escribir "Correcto"
+						atinadas <- atinadas + 1
+					SiNo
+						Escribir "Incorrecto"
+					Fin Si
+				3:
+					Escribir num1," * ",num2," = "
+					Leer res
+					Si res = num1 * num2 Entonces
+						Escribir "Correcto"
+						atinadas <- atinadas + 1
+					SiNo
+						Escribir "Incorrecto"
+					Fin Si
+				4:
+					Escribir num1," / ",num2," = "
+					Leer res
+					Si res = num1 / num2 Entonces
+						Escribir "Correcto"
+						atinadas <- atinadas + 1
+					SiNo
+						Escribir "Incorrecto"
+					Fin Si
+				
+					Escribir "Operador no valido"
+							
+				De Otro Modo:
+					Escribir "Operador no valido"
+			Fin Segun
+		
+	   Fin Para
+		
+		escribir " Atinaste a ",atinadas
+		
+			
+	FinAlgoritmo
+
+ # VERSION 8
+
+	 Algoritmo calcular_mult
+  	Definir num1,num2,res,oper,atinadas,repeticion1 Como Entero
+	Definir repeticion Como Logico
+	
+	Escribir "##########################"
+	Escribir"### ADIVINA EL RESULTADO###"
+	Escribir "##########################"
+	Escribir "Presiona una tecla para comenzar"
+	//esperar hasta presionar alguna tecla
+	Esperar Tecla
+	
+	//METEMOS EL CICLO Para
+	Para i<-0 Hasta 9 Con Paso 1 Hacer
+		
+		repeticion<-falso
+		num1<-azar(99)+1
+		num2<-azar(9)+1
+		oper<-azar(3)+1
+		
+		Segun oper Hacer
+			1:
+				Para j<-1 Hasta 3 Con Paso 1 Hacer
+					Escribir num1," + ",num2," = "
+					Leer res
+					Si res = num1 + num2 Entonces
+						Escribir "Procesando respuesta"
+						Esperar 2 Segundos
+						Escribir "Correcto"
+						atinadas <- atinadas + 1
+						j<-j+3
+					SiNo
+						Escribir "Procesando respuesta"
+						Esperar 2 Segundos
+						Escribir "Incorrecto"
+					Fin Si
+				Fin Para
+				
+				//limpiamos pantalla
+				Limpiar Pantalla
+			2:
+				Mientras repeticion= Falso Hacer
+					Escribir num1," - ",num2," = "
+					Leer res
+					Si res = num1 - num2 Entonces
+						Escribir "Procesando respuesta"
+						Esperar 2 Segundos
+						Escribir "Correcto"
+						atinadas <- atinadas + 1
+						repeticion<-Verdadero
+					SiNo
+						Escribir "Procesando respuesta"
+						Esperar 2 Segundos
+						Escribir "Incorrecto"
+					Fin Si
+				Fin Mientras
+				
+				//limpiamos pantalla
+				Limpiar Pantalla
+			3:
+				Mientras repeticion1 < 3 Hacer
+					Escribir num1," * ",num2," = "
+					Leer res
+					Si res = num1 * num2 Entonces
+						Escribir "Procesando respuesta"
+						Esperar 2 Segundos
+						Escribir "Correcto"
+						atinadas <- atinadas + 1
+						repeticion1<-repeticion1 + 3
+					SiNo
+						Escribir "Procesando respuesta"
+						Esperar 2 Segundos
+						Escribir "Incorrecto"
+						repeticion1<-repeticion1 + 1
+					Fin Si
+				Fin Mientras
+				//limpiamos pantalla
+				Limpiar Pantalla
+				
+			4:// hacer mientras
+				Repetir
+					Escribir num1," / ",num2," = "
+					Leer res
+					Si res = num1 / num2 Entonces
+						Escribir "Correcto"
+						atinadas <- atinadas + 1
+						repeticion<-Verdadero
+					SiNo
+						Escribir "Incorrecto"
+					Fin Si
+				Hasta Que repeticion <> Verdadero
+				
+				
+				Escribir num1," / ",num2," = "
+				Leer res
+				Si res = num1 / num2 Entonces
+					Escribir "Correcto"
+					atinadas <- atinadas + 1
+				SiNo
+					Escribir "Incorrecto"
+				Fin Si
+				//limpiamos pantalla
+				Limpiar Pantalla
+				
+				Escribir "Operador no valido"
+				
+			De Otro Modo:
+				Escribir "Operador no valido"
+		Fin Segun
+		
+	Fin Para
+	
+	Escribir "Has adivinado ", atinadas Sin Saltar
+	Escribir " de tres operaciones"
+	
+	
+	FinAlgoritmo
+
+## diagarama de flujo
+
+<img width="642" alt="image" src="https://github.com/escuelaDeCodigoMargaritaMaza/Pensamiento_computacional/assets/91554777/31e70b47-7440-4ba0-8579-f1cf82454a6b">
+
