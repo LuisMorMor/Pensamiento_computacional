@@ -44,67 +44,158 @@
 ![image](https://github.com/escuelaDeCodigoMargaritaMaza/Pensamiento_computacional/assets/91554777/8edad51c-5461-4d4c-bfdf-d2523f818269)
 
 # VERSION 2
-## PSINT
 
+## PSINT
+    
+    Funcion PedirMateria()
+    	Escribir "Ingresa la materia"
+    FinFuncion
+    //procedimiento para pedir calificaciones
+    Funcion PedirCalificacion()
+    	Escribir "Ingresa la calificacion"
+    FinFuncion
+    //funcion para calcular promedio
+    Funcion promedio<-CalcularPromedio(suma)
+    	promedio<-suma/4
+    FinFuncion
+    
     Algoritmo sin_titulo
-    	//variables que se usarán en el algoritmo
-    	Definir calificacion_alumno,suma_calificaciones,calificacion_mas_baja,calificacion_mas_alta Como Real
-    	Definir nombre_alumno,nombre_materia,materia_menor_calificacion,materia_mayor_calificacion Como Caracter
-    	
-    	//solicitar nombtre
+    	Definir cal1,cal2,cal3,cal4,promedio,suma Como Real
+    	Definir nombre_alumno,materia1,materia2,materia3,materia4 Como Caracter
+    	//solicitamos y almacenamos nombre del alumno
     	Escribir "Ingresa el nombre del alumno"
     	Leer nombre_alumno
-    	
     	nombre_alumno<-Mayusculas(nombre_alumno)
+    	//solicitamos y almacenamos nombre materia1 y calificación 1
+    	PedirMateria()
+    	Leer materia1
+    	PedirCalificacion()
+    	Leer cal1
+    	suma<-suma + cal1
     	
-    	//Solicitar primera calificación y asignarla como la mayor y la menor
-    	Escribir "Ingresa el nombre de la materia 1"
-    	Leer nombre_materia
+    	//solicitamos y almacenamos nombre materia2 y calificación 2
+    	PedirMateria()
+    	Leer materia2
+    	PedirCalificacion()
+    	Leer cal2
+    	suma<-suma + cal2
+    	//solicitamos y almacenamos nombre materia3 y calificación 3
+    	PedirCalificacion()
+    	PedirMateria()
+    	Leer materia3
+    	Leer cal3
+    	suma<-suma + cal3
+    	//solicitamos y almacenamos nombre materia4 y calificación 4
+    	PedirMateria()
+    	Leer materia4
+    	PedirCalificacion()
+    	Leer cal4
+    	suma<-suma + cal4
     	
-    	materia_menor_calificacion<-nombre_materia
-    	materia_mayor_calificacion<-nombre_materia
+    	promedio <-redon(CalcularPromedio(suma))
     	
-    	Escribir "Ingresa la calificación 1"
-    	Leer calificacion_alumno
+    	Escribir "El promedio de ",nombre_alumno, " es de ",promedio," aprobado? ",promedio >= 6
     	
-    	calificacion_mas_alta<-calificacion_alumno
-    	calificacion_mas_baja<-calificacion_alumno
-    	
-    	suma_calificaciones<-suma_calificaciones+calificacion_alumno
-    	
-    	Limpiar Pantalla
-    	
-    	Para i<-0 Hasta 2 Con Paso 1 Hacer
-    		Escribir "Ingresa el nombre de la materia ",i+2
-    		Leer nombre_materia
-    		Escribir "Ingresa la calificación ",i+2
-    		Leer calificacion_alumno
-    		
-    		suma_calificaciones<-suma_calificaciones+calificacion_alumno
-    		
-    		si (calificacion_alumno > calificacion_mas_alta) entonces
-    			calificacion_mas_alta = calificacion_alumno
-    			materia_mayor_calificacion = nombre_materia
+    FinAlgoritmo
+
+
+## DIAGRAMA DE FLUJO
+
+<img width="287" alt="image" src="https://github.com/escuelaDeCodigoMargaritaMaza/Pensamiento_computacional/assets/91554777/fcceb404-7f8b-46c0-bb2e-4259e02b3c39">
+
+# VERSION 3
+
+    Funcion PedirMateria()
+    	Escribir 'Ingresa la materia'
+    FinFuncion
+    
+    // procedimiento para pedir calificaciones
+    Funcion PedirCalificacion()
+    	Escribir 'Ingresa la calificacion'
+    FinFuncion
+    
+    // funcion para calcular promedio
+    Funcion promedio <- CalcularPromedio(suma)
+    	promedio <- suma/4
+    FinFuncion
+    
+    Algoritmo sin_titulo
+    	Definir cal1,cal2,cal3,cal4,promedio,suma Como Real
+    	Definir nombre_alumno,materia1,materia2,materia3,materia4 Como Caracter
+    	// solicitamos y almacenamos nombre del alumno
+    	Escribir 'Ingresa el nombre del alumno'
+    	Leer nombre_alumno
+    	nombre_alumno <- Mayusculas(nombre_alumno)
+    	// solicitamos y almacenamos nombre materia1 y calificación 1
+    	PedirMateria()
+    	Leer materia1
+    	Si longitud(materia1)=4 Entonces
+    		PedirCalificacion()
+    		Leer cal1
+    		Si cal1>0 Y cal1<=10 Entonces
+    			suma <- suma+cal1
+    			// solicitamos y almacenamos nombre materia2 y calificación 2
+    			PedirMateria()
+    			Leer materia2
+    			Si longitud(materia2)=4 Entonces
+    				PedirCalificacion()
+    				Leer cal2
+    				Si cal2>0 Y cal2<=10 Entonces
+    					suma <- suma+cal2
+    					// solicitamos y almacenamos nombre materia3 y calificación 3
+    					PedirMateria()
+    					Leer materia3
+    					Si longitud(materia3) Entonces
+    						PedirCalificacion()
+    						Leer cal3
+    						Si cal3>0 Y cal3 <=10 Entonces
+    							suma <- suma+cal3
+    							// solicitamos y almacenamos nombre materia4 y calificación 4
+    							PedirMateria()
+    							Leer materia4
+    							Si longitud(cal4)=4 Entonces
+    								PedirCalificacion()
+    								Leer cal4
+    								Si cal4 > 0 Y cal4 <= 10 Entonces
+    									suma <- suma+cal4
+    									promedio <- redon(CalcularPromedio(suma))
+    									Si promedio<=10 Y promedio>=9 Entonces
+    										Escribir "E"
+    									SiNo
+    										Si promedio<9 Y promedio>=7 Entonces
+    											Escribir "MB"
+    										SiNo
+    											Si promedio<7 y promedio>=6 Entonces
+    												Escribir "B"
+    											SiNo
+    												Si promedio<6 Y promedio>0 Entonces
+    													Escribir "Reprobado"
+    												SiNo
+    													Escribir "Recursar"
+    												FinSi
+    											FinSi
+    										FinSi
+    									FinSi
+    								SiNo
+    									Escribir "Calificación fuera de rango"
+    								FinSi
+    							FinSi
+    						SiNo
+    							Escribir "Calificación fuera de rango"
+    						FinSi
+    					FinSi
+    				SiNo
+    					Escribir "Calificación fuera de rango"
+    				FinSi
+    			FinSi
+    		SiNo
+    			Escribir 'Calificación fuera de rango'
     		FinSi
-    		
-    		si (calificacion_alumno < calificacion_mas_baja) entonces
-    			calificacion_mas_baja = calificacion_alumno
-    			materia_menor_calificacion = nombre_materia
-    		FinSi
-    		
-    		
-    	Fin Para
-    	
-    	
-    	Escribir calificacion_mas_alta
-    	Escribir calificacion_mas_baja
-    	
-    	
-    	
+    	FinSi
     FinAlgoritmo
 
 ## DIAGRAMA DE FLUJO
 
-<img width="272" alt="image" src="https://github.com/escuelaDeCodigoMargaritaMaza/Pensamiento_computacional/assets/91554777/b1ed74e1-d145-497f-9432-814f960de6b6">
+<img width="571" alt="image" src="https://github.com/escuelaDeCodigoMargaritaMaza/Pensamiento_computacional/assets/91554777/6c4c4dc4-6ccb-40a1-a3c3-a0c4630ecbfe">
 
 
